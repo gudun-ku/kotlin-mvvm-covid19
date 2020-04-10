@@ -5,6 +5,8 @@ import id.rizmaulana.covid19.data.model.CovidDetail
 import id.rizmaulana.covid19.data.model.CovidOverview
 import id.rizmaulana.covid19.data.model.indonesia.IndonesiaDaily
 import id.rizmaulana.covid19.data.model.indonesia.IndonesiaPerProvince
+import id.rizmaulana.covid19.data.model.russia.RussiaDaily
+import id.rizmaulana.covid19.data.model.russia.RussiaPerProvince
 import id.rizmaulana.covid19.data.source.generated.AppGeneratedSource
 import id.rizmaulana.covid19.data.source.pref.AppPrefSource
 import id.rizmaulana.covid19.data.source.remote.AppRemoteSource
@@ -234,6 +236,14 @@ open class AppRepository constructor(
     override fun getIndonesiaPerProvince(): Observable<List<IndonesiaPerProvince>> =
         api.indonesiaPerProvince()
             .map { it.data }
+
+    override fun getRussiaDaily(): Observable<List<RussiaDaily>> = api.russiaDaily()
+        .map { it.data }
+
+    override fun getRussiaPerProvince(): Observable<List<RussiaPerProvince>> =
+        api.russiaPerProvince()
+            .map { it.data }
+
 
     override fun getCachePinnedRegion(): CovidDetail? = pref.getPrefCountry()
 

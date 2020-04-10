@@ -6,6 +6,8 @@ import id.rizmaulana.covid19.data.model.CovidDetail
 import id.rizmaulana.covid19.data.model.CovidOverview
 import id.rizmaulana.covid19.data.model.indonesia.IndonesiaDaily
 import id.rizmaulana.covid19.data.model.indonesia.IndonesiaPerProvince
+import id.rizmaulana.covid19.data.model.russia.RussiaDaily
+import id.rizmaulana.covid19.data.model.russia.RussiaPerProvince
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -36,6 +38,12 @@ interface Api {
 
     @GET
     fun getIndonesiaPerProvince(@Url url: String = "https://indonesia-covid-19.mathdro.id/api/provinsi"): Observable<BaseResponse<List<IndonesiaPerProvince>>>
+
+    @GET
+    fun getRussiaDaily(@Url url: String = "https://indonesia-covid-19.mathdro.id/api/harian"): Observable<BaseResponse<List<RussiaDaily>>>
+
+    @GET
+    fun getRussiaPerProvince(@Url url: String = "https://indonesia-covid-19.mathdro.id/api/provinsi"): Observable<BaseResponse<List<RussiaPerProvince>>>
 
 
 }

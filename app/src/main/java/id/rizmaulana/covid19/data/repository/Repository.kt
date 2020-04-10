@@ -5,6 +5,8 @@ import id.rizmaulana.covid19.data.model.CovidDetail
 import id.rizmaulana.covid19.data.model.CovidOverview
 import id.rizmaulana.covid19.data.model.indonesia.IndonesiaDaily
 import id.rizmaulana.covid19.data.model.indonesia.IndonesiaPerProvince
+import id.rizmaulana.covid19.data.model.russia.RussiaDaily
+import id.rizmaulana.covid19.data.model.russia.RussiaPerProvince
 import id.rizmaulana.covid19.ui.adapter.viewholders.PerCountryItem
 import io.reactivex.Completable
 import io.reactivex.Observable
@@ -31,5 +33,7 @@ interface Repository {
     fun getPerCountryItem(): List<PerCountryItem>
     fun getIndonesiaDaily(): Observable<List<IndonesiaDaily>>
     fun getIndonesiaPerProvince(): Observable<List<IndonesiaPerProvince>>
+    fun getRussiaDaily(): Observable<List<RussiaDaily>>
+    fun getRussiaPerProvince(): Observable<List<RussiaPerProvince>>
 
 }
